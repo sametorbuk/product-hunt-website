@@ -2,7 +2,8 @@
 import { useState } from "react"
 import "./pizza-ingredients.css"
 
-export default function PizzasIngredients() {
+export default function PizzasIngredients(props) {
+  const {formData , setFormData} = props
   const [selectedIngredients , setSelecetedIngredients] = useState(0)
   
   function clickIngredientsHandler(event){
@@ -11,6 +12,8 @@ export default function PizzasIngredients() {
    if(checkbox.checked) {
        if(selectedIngredients < 10) {
         setSelecetedIngredients(selectedIngredients+1)
+        const upgrade= [...formData["malzemeler"] , event.target.value]
+        setFormData({...formData , upgrade})
        } else {
         checkbox.checked= false;
         alert("En fazla 10 adet seçim yapabilirsiniz")
@@ -18,6 +21,7 @@ export default function PizzasIngredients() {
 
    } else {
     setSelecetedIngredients(selectedIngredients-1)
+    setFormData({...formData , ["malzemeler"]:formData["malzemeler"].filter((item)=> !event.target.value) })
    }
    
 
