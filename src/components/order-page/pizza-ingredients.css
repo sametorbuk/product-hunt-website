@@ -1,0 +1,46 @@
+.pizza-ingredients-div {
+    display: flex;
+    gap: 10rem;
+    
+}
+
+
+.div1 ,
+.div2 ,
+.div3 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.extra-ingredients {
+    margin-top: 5rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
+
+.ingredients-label {
+  
+    position: relative;
+    top: 1.8rem;
+}
+
+#Sosis ,
+#Pepperoni,
+#KanadaJambonu ,
+ #Sucuk,
+ #Domates,
+ #Kabak,
+ #Mısır,
+ #Sarımsak,
+ #Soğan,
+ #TavukIzgara,
+ #Biber,
+ #Ananas,
+ #Jalepeno,
+ #Mantar
+ {
+   width: 1rem;
+}
