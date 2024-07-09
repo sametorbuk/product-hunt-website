@@ -2,10 +2,19 @@ import "./order-page.css"
 import { Link } from "react-router-dom/cjs/react-router-dom.min"
 import PizzasSizeOptions from "./pizzas-size-options"
 import PizzasIngredients from "./pizzas-ingredients"
+import { useState } from "react"
 
 
+const initialValues = {
+    name:"",
+    size:"",
+    malzemeler:[],
+    special:""
+
+}
 
 export default function OrderPageContent() {
+const [formData , setFormData] = useState(initialValues)
 
 return (
 <>
@@ -25,17 +34,20 @@ return (
      <p className="pizzas-price" >89.95₺</p>
      <p className="pizzas-point" >4.9★ </p>
      <p>(200)</p>
-
-
-    </div>
+ </div>
     <p>Frontend Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza domates , peynir ve genellikle çeşitli malzemelerle kaplanmış , daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen genellikle yuvarlak , düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir. </p>
 
 
 
 
 </div>
-<PizzasSizeOptions/>
-<PizzasIngredients/>
+
+<form>
+<PizzasSizeOptions  formData={formData} setFormData={setFormData}  />
+<PizzasIngredients formData={formData} setFormData={setFormData}  />
+<button type="submit" >Sipariş ver</button>
+</form>
+
 
 
 
