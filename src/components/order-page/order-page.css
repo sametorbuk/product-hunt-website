@@ -58,3 +58,8 @@ nav {
 .pizzas-point {
     flex: 0.2;
 }
+
+Form {
+    display: flex;
+    flex-direction: column;
+}
