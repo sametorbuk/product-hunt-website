@@ -1,0 +1,22 @@
+.order-page-content-header {
+    background-color: #be0000;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.header-button {
+    color:white;
+}
+
+nav {
+    margin-right: 27rem;
+}

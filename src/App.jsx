@@ -3,6 +3,7 @@ import './App.css'
 
 import { Route, Switch } from 'react-router-dom/cjs/react-router-dom.min'
 import MainPageContent from './components/Main-page/MainPageContent'
+import OrderPageContent from './components/order-page/order-page'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -13,9 +14,8 @@ function App() {
         <MainPageContent/>
        </Route>
         <Route path="/order">
-
-        
-       </Route>
+        <OrderPageContent/>
+          </Route>
         </Switch>
 
       
