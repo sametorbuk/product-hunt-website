@@ -63,3 +63,41 @@ Form {
     display: flex;
     flex-direction: column;
 }
+
+.areaForNote {
+
+    margin-top: 3rem;
+}
+
+.labelForNote {
+  margin: 0;
+  font-weight: bold;
+}
+
+.order-count-and-info-div {
+
+display: flex;
+margin-top: 5rem;
+
+}
+
+.order-count-settings-div {
+    display: flex;
+}
+
+
+.count-decrease-btn ,
+.count-increase-btn {
+
+background-color: #FDC913;
+height: 3rem;
+}
+
+.total-info-and-submit-div{
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 21rem;
+    width: 15rem;
+
+}

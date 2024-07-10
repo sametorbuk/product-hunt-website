@@ -16,6 +16,28 @@ const initialValues = {
 export default function OrderPageContent() {
 const [formData , setFormData] = useState(initialValues)
 
+const [pizzaCount , setPizzaCount] = useState(0)
+
+function clickCountIncrease() {
+
+setPizzaCount(pizzaCount+1)
+}
+
+function clickCountDecrease() {
+   
+    if(pizzaCount >= 1) {
+        setPizzaCount(pizzaCount-1)
+    } else {
+        return
+    }
+}
+
+function submitHandler(event) {
+    event.preventDefault();
+}
+
+
+
 return (
 <>
 <header className="order-page-header">
@@ -42,10 +64,33 @@ return (
 
 </div>
 
-<form>
+<form onSubmit={submitHandler} >
 <PizzasSizeOptions  formData={formData} setFormData={setFormData}  />
 <PizzasIngredients formData={formData} setFormData={setFormData}  />
-<button type="submit" >Sipariş ver</button>
+
+<label className="labelForNote" htmlFor="not-area">Sipariş Notu</label>
+<textarea placeholder="Siparişine eklemek istediğin bir not var mı ?" className="areaForNote" name="" id="not-area"></textarea>
+
+<div className="order-count-and-info-div" >
+
+<div className="order-count-settings-div">
+<button onClick={clickCountDecrease} className="count-decrease-btn"  >-</button>
+<p>{pizzaCount}</p>
+<button onClick={clickCountIncrease} className="count-increase-btn" >+</button>
+
+</div>
+
+
+<div className="total-info-and-submit-div">
+<p style={{fontWeight:"bold"}}>Sipariş Toplamı:</p>
+<p>Seçimler</p>
+<p style={{color:"#CE2829" , fontWeight:"bold"}}  >Toplam:{pizzaCount*89.95}</p>
+{console.log(formData)}
+<button style={{backgroundColor:"#FDC913"}} type="submit" >Sipariş ver</button>
+</div>
+
+</div>
+
 </form>
 
 
