@@ -3,7 +3,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min"
 import PizzasSizeOptions from "./pizzas-size-options"
 import PizzasIngredients from "./pizzas-ingredients"
 import { useState } from "react"
-
+import axios from "axios"
 
 const initialValues = {
     name:"",
@@ -34,6 +34,13 @@ function clickCountDecrease() {
 
 function submitHandler(event) {
     event.preventDefault();
+}
+
+
+function submitPostHandler() {
+   axios.post("https://reqres.in/api/pizza" , formData)
+   .then((response)=> console.log(response.data))
+   .catch((error)=> console.log(error))
 }
 
 
@@ -86,7 +93,7 @@ return (
 <p>Seçimler {formData["malzemeler"].length*5}</p>
 <p style={{color:"#CE2829" , fontWeight:"bold"}}  >Toplam:{pizzaCount*89.95+ formData["malzemeler"].length*5}</p>
 {console.log(formData)}
-<button style={{backgroundColor:"#FDC913"}} type="submit" >Sipariş ver</button>
+<button onClick={submitPostHandler} disabled={formData.size ==="" || formData["malzemeler"].length<4} style={{backgroundColor:"#FDC913"}} type="submit" >Sipariş ver</button>
 </div>
 
 </div>
