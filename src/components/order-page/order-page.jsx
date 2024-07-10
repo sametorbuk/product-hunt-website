@@ -84,7 +84,7 @@ return (
 <div className="total-info-and-submit-div">
 <p style={{fontWeight:"bold"}}>Sipariş Toplamı:</p>
 <p>Seçimler {formData["malzemeler"].length*5}</p>
-<p style={{color:"#CE2829" , fontWeight:"bold"}}  >Toplam:{pizzaCount*89.95}</p>
+<p style={{color:"#CE2829" , fontWeight:"bold"}}  >Toplam:{pizzaCount*89.95+ formData["malzemeler"].length*5}</p>
 {console.log(formData)}
 <button style={{backgroundColor:"#FDC913"}} type="submit" >Sipariş ver</button>
 </div>
