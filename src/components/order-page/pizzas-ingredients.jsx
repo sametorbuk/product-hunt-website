@@ -13,7 +13,8 @@ export default function PizzasIngredients(props) {
        if(selectedIngredients < 10) {
         setSelecetedIngredients(selectedIngredients+1)
         const upgrade= [...formData["malzemeler"] , event.target.value]
-        setFormData({...formData , upgrade})
+        setFormData({...formData , ["malzemeler"]:upgrade})
+        {console.log(formData)}
        } else {
         checkbox.checked= false;
         alert("En fazla 10 adet seçim yapabilirsiniz")
